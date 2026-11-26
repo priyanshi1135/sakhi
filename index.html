@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SAKHI – Working Demo</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="mark" aria-hidden="true">स</span>SAKHI <small>Women safety system · working demo</small></div>
+  <div class="sp"></div>
+  <span class="status" id="clock"></span>
+  <button class="btn" data-a="reset">Reset demo</button>
+</header>
+
+<main class="stage">
+  <!-- control rail -->
+  <aside class="rail" aria-label="Demo controls">
+    <div class="grp">
+      <h3>Phone conditions</h3>
+      <div class="toggle"><span>Mobile internet</span><button class="switch" role="switch" id="sw-net" data-a="toggleNet" aria-label="Mobile internet"></button></div>
+      <label class="status" for="bat">Battery: <b id="batv"></b></label>
+      <input type="range" id="bat" min="3" max="100">
+      <label class="status" for="hour">Time of day: <b id="hourv"></b></label>
+      <input type="range" id="hour" min="0" max="23">
+      <label class="status" for="speed">Demo speed</label>
+      <select id="speed">
+        <option value="0.25">Fast – a 40-minute trip takes 10 s</option>
+        <option value="0.5">Medium – a 40-minute trip takes 20 s</option>
+        <option value="1">Slow – a 40-minute trip takes 40 s</option>
+      </select>
+    </div>
+    <div class="grp">
+      <h3>Trigger SOS like a real user</h3>
+      <button class="act" data-a="trig" data-t="SHAKE">📳 Shake the phone</button>
+      <button class="act" data-a="trig" data-t="POWER">⏻ Press power button 3 times</button>
+      <button class="act" data-a="trig" data-t="VOICE">🎙️ Say the keyword “bachao”</button>
+      <p class="status" id="silentStatus"></p>
+    </div>
+    <div class="grp">
+      <h3>Situations to show</h3>
+      <button class="act" data-a="stopMoving">🛑 Stop moving during journey</button>
+      <button class="act" data-a="cabDeviate">🚕 Cab goes off route</button>
+      <button class="act" data-a="lowBattery">🔋 Battery drops below 10%</button>
+    </div>
+    <div class="grp">
+      <h3>Use real device features</h3>
+      <button class="act" data-a="realGps">📍 Use my real GPS location</button>
+      <button class="act" data-a="realShake">📱 Use this phone’s shake sensor</button>
+      <p class="status" id="realStatus">Microphone recording starts automatically during SOS if the browser allows it.</p>
+    </div>
+  </aside>
+
+  <!-- user phone -->
+  <section class="phone-wrap" aria-label="Priya's phone (SAKHI app)">
+    <div class="phone-label">Priya’s phone · SAKHI app</div>
+    <div class="phone"><div class="screen" id="screen"></div></div>
+  </section>
+
+  <!-- right panel -->
+  <section class="panel" aria-label="Other views">
+    <nav class="tabs" role="tablist" id="tabs"></nav>
+    <div class="pbody" id="pbody"></div>
+  </section>
+</main>
+<div id="modal"></div>
+
+<script src="js/data.js"></script>
+<script src="js/map.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
