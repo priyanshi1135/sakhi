@@ -1,0 +1,11 @@
+{
+  "name": "sakhi-women-safety-demo",
+  "version": "1.0.0",
+  "description": "SAKHI – working web prototype of the women safety system (Project-1, B.Tech CSE, Medicaps University)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Prerna Magarde, Priyanshi Porwal, Priyanshi Singh Kaurav",
+  "license": "UNLICENSED"
+}
